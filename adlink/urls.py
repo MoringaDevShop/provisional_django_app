@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from adlink_app import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+     url(r'^register/$', views. register_customer, name='register'),
+     # url(r'^home/$', views.home, name="HomePage"),
+      url(r'^login/$', views.clerk_login, name='clerk_login'),
+     url(r'^logout/$', views.clerk_logout, name="logout"),
+     url('^', include('django.contrib.auth.urls'))
 ]
+
+
+
